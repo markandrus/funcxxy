@@ -1,0 +1,10 @@
+get_filename_component(funcxxy_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(CMakeFindDependencyMacro)
+
+list(APPEND CMAKE_MODULE_PATH ${funcxxy_CMAKE_DIR})
+
+if(NOT TARGET funcxxy::funcxxy)
+  include("${funcxxy_CMAKE_DIR}/funcxxyTargets.cmake")
+endif()
+
+set(funcxxy_LIBRARIES funcxxy::funcxxy)
