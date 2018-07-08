@@ -1,7 +1,7 @@
 funcxxy
 =======
 
-_**Fun**ctional C++ (**CXX**) Librar**y** (pronounced "funky")_
+_**<u>Fun</u>**ctional C++ (**<u>CXX</u>**) Librar**<u>y</u>** (pronounced "funky")_
 
 Example
 -------
@@ -30,6 +30,7 @@ Features
 
 * Maybe
 * Either
+* Validation
 
 ### Operators
 
@@ -47,9 +48,9 @@ Motivation
 Why would you ever want to use this library? Well, if you've used libraries like
 [optparse-applicative](http://hackage.haskell.org/package/optparse-applicative)
 or [aeson](http://hackage.haskell.org/package/aeson) in Haskell or
-[circe](https://circe.github.io/circe) (or similar) in Scala, then you may be
-familiar with the Applicative and Alternative type classes. These type classes
-can be really useful for writing concise parsers and validators. In fact, this
-library was extracted from [node-webrtc](https://github.com/js-platform/node-webrtc)
-where it was used to marshall data between C++ and JavaScript. To see an example
-of what I mean, check out the [example](example) project.
+[circe](https://circe.github.io/circe) in Scala, then you may be familiar with
+the Applicative and Alternative type classes. These type classes can be really
+useful for writing concise parsers and validators. In fact, this library was
+extracted from [node-webrtc](https://github.com/js-platform/node-webrtc) where
+it was used to marshall data between C++ and JavaScript. To see an example of
+what I mean, check out the [example](example) project.
