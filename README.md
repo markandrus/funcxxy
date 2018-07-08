@@ -1,7 +1,7 @@
 funcxxy
 =======
 
-_**<u>Fun</u>**ctional C++ (**<u>CXX</u>**) Librar**<u>y</u>** (pronounced "funky")_
+_**Fun**ctional C++ (**CXX**) Librar**y** (pronounced "funky")_
 
 Example
 -------
