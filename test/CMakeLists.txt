@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.5)
+
 configure_file(
   ${CMAKE_SOURCE_DIR}/cmake/GoogleTest-CMakeLists.txt.in
   ${CMAKE_BINARY_DIR}/googletest-download/CMakeLists.txt
