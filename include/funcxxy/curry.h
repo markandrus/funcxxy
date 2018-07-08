@@ -11,8 +11,7 @@
  * https://stackoverflow.com/a/26768388
  */
 
-#ifndef FUNCXXY_CURRY_H_
-#define FUNCXXY_CURRY_H_
+#pragma once
 
 #include <functional>
 
@@ -62,5 +61,3 @@ template <typename R, typename...Ts>
 auto curry(R(* const fun)(Ts...)) -> typename _dtl::_curry<std::function<R(Ts...)>>::type {
   return _dtl::_curry<std::function<R(Ts...)>>(fun).result;
 }
-
-#endif  // FUNCXXY_CURRY_H_

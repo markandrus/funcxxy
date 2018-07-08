@@ -11,8 +11,7 @@
  * https://hackage.haskell.org/package/base/docs/Data-Maybe.html
  */
 
-#ifndef FUNCXXY_MAYBE_H_
-#define FUNCXXY_MAYBE_H_
+#pragma once
 
 #include <cassert>
 #include <functional>
@@ -151,5 +150,3 @@ static Maybe<T> Nothing() {
 }
 
 }  // namespace funcxxy
-
-#endif  // FUNCXXY_MAYBE_H_
