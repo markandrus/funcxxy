@@ -86,6 +86,11 @@ class Validation {
     return _is_valid ? _value : default_value;
   }
 
+  template <typename S>
+  S FromValidation(std::function<S(Errors)> fromInvalid, std::function<S(T)> fromValid) {
+    return _is_valid ? fromValid(_value) : fromInvalid(_errors);
+  }
+
   /**
    * Check whether or not the Validation is invalid.
    * @return true if the Validation is invalid; otherwise, false

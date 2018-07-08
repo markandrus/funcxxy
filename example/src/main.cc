@@ -6,16 +6,16 @@
 using namespace funcxxy;
 using namespace rapidjson;
 
-static Either<const char*, int> getInt(const GenericValue<UTF8<char>>& value) {
+static Validation<int> getInt(const GenericValue<UTF8<char>>& value) {
   return value.IsInt()
-      ? Right<const char*>(value.GetInt())
-      : Left<int>("Expected an int");
+      ? Valid(value.GetInt())
+      : Invalid<int>("Expected an int");
 }
 
-static Either<const char*, std::string> getString(const GenericValue<UTF8<char>>& value) {
+static Validation<std::string> getString(const GenericValue<UTF8<char>>& value) {
   return value.IsString()
-      ? Right<const char*>(std::string(value.GetString()))
-      : Left<std::string>("Expected a string");
+      ? Valid(std::string(value.GetString()))
+      : Invalid<std::string>("Expected a string");
 }
 
 static std::string duplicate(const std::string message, const int times) {
@@ -33,8 +33,10 @@ int main() {
     curry(duplicate)
       % getString(document["message"])
       * getInt(document["times"])
-  ).FromEither<int>([](const std::string error) {
-    std::cerr << error << std::endl;
+  ).FromValidation<int>([](const Errors errors) {
+    for (const auto &error : errors) {
+      std::cerr << " - " << error << std::endl;
+    }
     return 1;
   }, [](const std::string duplicated) {
     std::cout << duplicated;
